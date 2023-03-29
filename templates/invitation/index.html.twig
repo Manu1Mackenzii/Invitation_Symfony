@@ -3,37 +3,47 @@
 {% block title %}Invitation index{% endblock %}
 
 {% block body %}
-    <h1>Invitation index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Expediteur</th>
-                <th>Receveur</th>
-                <th>Statut</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for invitation in invitations %}
-            <tr>
-                <td>{{ invitation.id }}</td>
-                <td>{{ invitation.expediteur }}</td>
-                <td>{{ invitation.receveur }}</td>
-                <td>{{ invitation.statut ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('app_invitation_show', {'id': invitation.id}) }}">show</a>
-                    <a href="{{ path('app_invitation_edit', {'id': invitation.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_invitation_new') }}">Create new</a>
+    <div class="white-panel">
+        <h1 >Liste des invitations</h1>
+
+        <a href="{{ path('app_invitation_new') }}">Ajouter une nouvelle invitation</a>
+
+        <div class="login-show">
+            <table class = "login-reg-panel">
+                <thead>
+                <tr >
+                    <th>Identifiant</th>
+                    <th>Expéditeur</th>
+                    <th>Receveur</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for invitation in invitations %}
+                    <tr>
+                        <td>{{ invitation.id }}</td>
+                        <td>{{ invitation.expediteur }}</td>
+                        <td>{{ invitation.receveur }}</td>
+                        <td>{{ invitation.statut ? 'Envoyé' : 'En attente' }}</td>
+                        <td>
+                            <a href="{{ path('app_invitation_show', {'id': invitation.id}) }}">Voir</a>
+                            <a href="{{ path('app_invitation_edit', {'id': invitation.id}) }}">modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
 {% endblock %}
