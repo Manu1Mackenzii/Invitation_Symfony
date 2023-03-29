@@ -23,12 +23,23 @@ Ajouter php, db: postgres et adminer
 #Ajout des variables d’environnement
 .env
 
-# Commande docker-compose up
-# composer install
+# Exécuter 
+Commande docker-compose up
+
+# Exécuter 
+composer install
 
 # Création de l’entité Invitation
+php bin/console make:entity
 
 # Dossier [tests]
 composer require --dev symfony/phpunit-bridge
+
+#les fixtures
+docker compose exec php composer require orm-fixtures --dev
+
+# les faker
+docker compose exec php  composer require fakerphp/faker --dev
+
 
 
