@@ -1,0 +1,57 @@
+version: '3.4'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: /Users/emmanuellagbekou/ENTRETIEN/Dockerfile
+    depends_on:
+      - database
+    image: symfony
+    ports:
+      - 81:80
+    volumes:
+      - .:/srv/app/
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/app?serverVersion=13&charset=utf8"
+
+
+  php:
+    container_name: php
+    build:
+      context: ./
+    depends_on:
+      - database
+    environment:
+      - APP_ENV=${APP_ENV}
+      - APP_SECRET=${APP_SECRET}
+      - DATABASE_URL=${DATABASE_URL}
+    volumes:
+      - ./../src/:/var/www
+    restart: always
+
+
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+    volumes:
+      - db_data:/var/lib/postgresql/data:rw
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - 8081:8081
+
+
+  ###< symfony/mercure-bundle ###
+volumes:
+  db_data:
+  php_socket:
