@@ -42,4 +42,17 @@ docker compose exec php composer require orm-fixtures --dev
 docker compose exec php  composer require fakerphp/faker --dev
 
 
+#Créer l'admin
+composer req admin api
+./bin/console make:admin:dashboard
+./bin/console make:admin:crud # choisir l'entité 
+
+Editer   ensuite le dashboardConseiller
+Editer ensuite le nom_de_l'entité_CrudController avec la fonction AdminUrlGenerator
+
+#Acceder à la partie admin
+ Lancer le serveur web PHP :
+ http://localhost:8000/admin
+
+
 
