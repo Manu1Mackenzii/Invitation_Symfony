@@ -3,9 +3,11 @@
 {% block title %}New Invitation{% endblock %}
 
 {% block body %}
-    <h1>Create new Invitation</h1>
+<div class="white-panel">
+    <h1 >Envoyer une Invitation</h1>
 
-    {{ include('invitation/_form.html.twig') }}
 
-    <a href="{{ path('app_invitation_index') }}">back to list</a>
+    {{ include('invitation/_form.html.twig', {'button_label': 'Envoyer'}) }}
+
+    <a href="{{ path('app_invitation_index') }}">Retour sur la liste des invitations</a>
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\InvitationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 #[ORM\Entity(repositoryClass: InvitationRepository::class)]
 class Invitation

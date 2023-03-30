@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Symfony2PluginSettings">
+    <option name="serviceJsNameStrategy" value="app.controller.admin.dashboard_controller:&#10;    class: App\Controller\Admin\DashboardController&#10;    tags:&#10;        - { name: container.service_subscriber }&#10;        - { name: kernel.event_subscriber }" />
+    <option name="pluginEnabled" value="true" />
+    <option name="lastServiceGeneratorLanguage" value="yaml" />
+  </component>
+</project>

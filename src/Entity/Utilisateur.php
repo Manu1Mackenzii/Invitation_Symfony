@@ -22,6 +22,11 @@ class Utilisateur
     #[ORM\Column(length: 20)]
     private ?string $password = null;
 
+    #[ORM\Column(length: 20)]
+    private ?int $invitation_id = null;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,20 @@ class Utilisateur
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+
+
+    public function getInvitation_id(): ?string
+    {
+        return $this->Invitation_id;
+    }
+
+    public function setInvitation_id(string $invitation_id): self
+    {
+        $this->invitation_id = $invitation_id;
 
         return $this;
     }

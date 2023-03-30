@@ -47,6 +47,7 @@ class UtilisateurControllerTest extends WebTestCase
             'utilisateur[nom]' => 'Testing',
             'utilisateur[mail]' => 'Testing',
             'utilisateur[password]' => 'Testing',
+            'utilisateur[invitation_id]' => 'Testing'
         ]);
 
         self::assertResponseRedirects('/utilisateur/');
@@ -61,6 +62,7 @@ class UtilisateurControllerTest extends WebTestCase
         $fixture->setNom('My Title');
         $fixture->setMail('My Title');
         $fixture->setPassword('My Title');
+        $fixture->setInvitation_id('My Title');
 
         $this->repository->save($fixture, true);
 
@@ -79,6 +81,7 @@ class UtilisateurControllerTest extends WebTestCase
         $fixture->setNom('My Title');
         $fixture->setMail('My Title');
         $fixture->setPassword('My Title');
+        $fixture->setInvitation_id('My Title');
 
         $this->repository->save($fixture, true);
 
@@ -88,6 +91,7 @@ class UtilisateurControllerTest extends WebTestCase
             'utilisateur[nom]' => 'Something New',
             'utilisateur[mail]' => 'Something New',
             'utilisateur[password]' => 'Something New',
+            'utilisateur[invitation_id]' => 'Something New',
         ]);
 
         self::assertResponseRedirects('/utilisateur/');
@@ -97,6 +101,7 @@ class UtilisateurControllerTest extends WebTestCase
         self::assertSame('Something New', $fixture[0]->getNom());
         self::assertSame('Something New', $fixture[0]->getMail());
         self::assertSame('Something New', $fixture[0]->getPassword());
+        self::assertSame('Something New', $fixture[0]->getInvitation_id());
     }
 
     public function testRemove(): void
@@ -109,6 +114,7 @@ class UtilisateurControllerTest extends WebTestCase
         $fixture->setNom('My Title');
         $fixture->setMail('My Title');
         $fixture->setPassword('My Title');
+        $fixture->setInvitation_id('My Title');
 
         $this->repository->save($fixture, true);
 
