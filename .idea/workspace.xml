@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8416c993-3792-443c-a0d9-6b46b309e406" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config/routes/api_platform.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/migrations/Version20230329163557.php" afterDir="false" />
@@ -239,7 +241,7 @@
       <updated>1680081898593</updated>
       <workItem from="1680081900929" duration="3533000" />
       <workItem from="1680089295773" duration="12948000" />
-      <workItem from="1680177180950" duration="4456000" />
+      <workItem from="1680177180950" duration="4821000" />
     </task>
     <servers />
   </component>
